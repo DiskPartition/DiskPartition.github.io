@@ -31,6 +31,30 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
+	  var rotationSpeed = 1.0;
+	  canvas.addEventListener( "mousemove", MouseMove, false );
+	  canvas.addEventListener( "mousedown", MouseDown, false );
+	  canvas.addEventListener( "wheel", MouseWheel, false );
+	  function MouseMove( event ) 
+	  {
+	  console.log( event.clientX + " : " + event.ClientY );
+	  }
+	  
+	  function MouseDown( event )
+	   {
+	  if ( 0 === event.button ) 
+	    {
+	   console.log("Left Mouse Button Pressed.");		
+	    }
+		 if ( 1 === event.button ) 
+	    {
+	   console.log("Middle Mouse Button Pressed.");		
+	    }
+		 if ( 2 === event.button ) 
+	    {
+	   console.log("Right Mouse Button Pressed.");		
+	    }
+	   }
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
